@@ -1,11 +1,11 @@
-const getSumBtn = document.createElement("button");
-getSumBtn.append("Get Total Price");
-document.body.appendChild(getSumBtn);
+//your code here
+const prices = document.querySelectorAll('[data-ns-test="price"]');
+const grandTotal = document.querySelector('[data-ns-test="grandTotal"]');
 
-const getSum = () => {
-//Add your code here
-  
-};
+let total = 0;
 
-getSumBtn.addEventListener("click", getSum);
+prices.forEach(price => {
+  total += parseInt(price.textContent);
+});
 
+grandTotal.textContent = total.toFixed(2);
